@@ -24,13 +24,3 @@ export async function GET(): Promise<NextResponse<UserResponse | { error: string
     );
   }
 }
-
-
-// import os from "os";
-// import { NextResponse } from "next/server";
-
-// export async function GET() {
-//   const host = os.hostname()
-//   const user = os.userInfo()?.username || "Desconhecido";
-//   return NextResponse.json({ user, host })
-// }

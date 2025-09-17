@@ -5,7 +5,7 @@ import Status from "./Status";
 
 function Table() {
   const [data, setData] = React.useState<string[][]>([]);
-  const [selectedRow, setSelectedRow] = React.useState<Number | null>(null);
+  const [selectedRow, setSelectedRow] = React.useState<number | null>(null);
 
   React.useEffect(() => {
     const fetchExcel = async () => {
