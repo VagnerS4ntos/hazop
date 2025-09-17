@@ -5,12 +5,21 @@ import { auth, db } from "./firebase/client";
 import { collection, getDocs } from "firebase/firestore";
 
 export default function Home() {
+  const [user, setUser] = React.useState<{ user: string; host: string } | null>(
+    null
+  );
+
   async function getData() {
-    const querySnapshot = await getDocs(collection(db, "hazop"));
-    querySnapshot.forEach((doc) => {
-      // doc.data() is never undefined for query doc snapshots
-      console.log(doc.id, " => ", doc.data());
-    });
+    try {
+      const response = await fetch("/user");
+      if (!response.ok) {
+        throw new Error("Erro na API");
+      }
+      const json = await response.json();
+      setUser(json);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -21,6 +30,11 @@ export default function Home() {
       >
         Salvar
       </button>
+
+      <div>
+        <p>User: {user?.user}</p>
+        <p>Host: {user?.host}</p>
+      </div>
     </main>
     // <>
     //   <main className="text-center h-[calc(100vh-4rem)]">
