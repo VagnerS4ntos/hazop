@@ -26,6 +26,10 @@ body {
   background-color:  rgb(12, 144, 74);
 }
 
+.text-green-petro {
+  color:  rgb(12, 144, 74);
+}
+
 .bg-green-petro-hover {
   background-color:  rgb(12, 144, 74);
 }
@@ -34,6 +38,6 @@ body {
   background-color:  rgb(8, 92, 47);
 }
 
-.br-yellow-petro {
+.bg-yellow-petro {
   background-color: rgb(236, 192, 0);
 }

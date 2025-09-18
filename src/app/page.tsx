@@ -11,7 +11,7 @@ export default function Home() {
 
   async function getData() {
     try {
-      const response = await fetch("/user");
+      const response = await fetch("/api/user");
       if (!response.ok) {
         throw new Error("Erro na API");
       }
@@ -24,17 +24,19 @@ export default function Home() {
 
   return (
     <main>
-      <button
-        className="bg-green-600 px-2 py-1 rounded-md hover:bg-green-700 cursor-pointer mx-auto mt-4"
-        onClick={getData}
-      >
-        Salvar
-      </button>
+      <section className="px-4">
+        <button
+          className="bg-green-600 px-2 py-1 rounded-md hover:bg-green-700 cursor-pointer mx-auto mt-4"
+          onClick={getData}
+        >
+          Salvar
+        </button>
 
-      <div>
-        <p>User: {user?.user}</p>
-        <p>Host: {user?.host}</p>
-      </div>
+        <div className="mt-4">
+          <p>User: {user?.user}</p>
+          <p>Host: {user?.host}</p>
+        </div>
+      </section>
     </main>
     // <>
     //   <main className="text-center h-[calc(100vh-4rem)]">

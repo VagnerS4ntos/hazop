@@ -39,7 +39,7 @@ function Table() {
                 key={i}
                 onClick={() => i != 0 && setSelectedRow(i)}
                 className={`transition-colors ${
-                  selectedRow === i && "br-yellow-petro text-white"
+                  selectedRow === i && "bg-yellow-petro text-white"
                 } ${
                   i == 0
                     ? "bg-white text-black"
