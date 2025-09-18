@@ -4,7 +4,7 @@ import { setCookie } from "cookies-next";
 import { toast } from "react-toastify";
 import { useUserDatabase } from "../states/config";
 
-function page() {
+function Login() {
   const [matricula, setMatricula] = React.useState("");
   const { getUsersDatabase, users } = useUserDatabase((state) => state);
 
@@ -71,4 +71,4 @@ function page() {
   );
 }
 
-export default page;
+export default Login;
